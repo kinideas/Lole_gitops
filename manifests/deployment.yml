@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: dev 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: dev
+  template:
+    metadata:
+      labels:
+        app: dev 
+    spec:
+      containers:
+        - name: dev 
+          image: testk8szema.azurecr.io/dev
+          ports:
+          - containerPort: 80
